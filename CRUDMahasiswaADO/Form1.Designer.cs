@@ -161,6 +161,7 @@
             this.button3.TabIndex = 12;
             this.button3.Text = "Menambah Data";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // button4
             // 
