@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Linq.Expressions;
+using System.Runtime.CompilerServices;
 
 namespace CRUDMahasiswaADO
 {
@@ -106,28 +107,28 @@ namespace CRUDMahasiswaADO
                     conn.Open();
                 }
 
-                if (txtNIM.text == "")
+                if (txtNIM1.Text == "")
                 {
                     MessageBox.Show("NIM harus diisi");
-                    txtNIM.Focus();
+                    txtNIM1.Focus();
                     return;
                 }
 
-                if (txtNama.text == "")
+                if (txtNama.Text == "")
                 {
                     MessageBox.Show("Nama harus diisi");
                     txtNama.Focus();
                     return;
                 }
 
-                if (cmbJK.text == "")
+                if (cmbJK.Text == "")
                 {
                     MessageBox.Show("Jenis Kelamin harus dipilih");
                     cmbJK.Focus();
                     return;
                 }
 
-                if (txtKodeProdi.text == "")
+                if (txtKodeProdi.Text == "")
                 {
                     MessageBox.Show("Kode Prodi harus diisi");
                     txtKodeProdi.Focus();
@@ -137,11 +138,11 @@ namespace CRUDMahasiswaADO
                 string query = @"INSERT INTO Mahasiswa
                                 (NIM, Nama, JenisKelamin, TanggalLahir, Alamat, KodeProdi, TanggalDaftar)
                                 VALUES
-                                (@NIM, @Nama, @JK, @TanggalLAhir, @Alamat, @KodeProdi, @TanggalDaftar)";
+                                (@NIM, @Nama, @JK, @TanggalLahir, @Alamat, @KodeProdi, @TanggalDaftar)";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
 
-                cmd.Parameters.AddWithValue("@NIM", txtNIM.Text);
+                cmd.Parameters.AddWithValue("@NIM", txtNIM1.Text);
                 cmd.Parameters.AddWithValue("@Nama",txtNama.Text);
                 cmd.Parameters.AddWithValue("@JK", cmbJK.Text);
                 cmd.Parameters.AddWithValue("@TanggalLahir", dtpTanggalLahir.Value.Date);
@@ -188,7 +189,7 @@ namespace CRUDMahasiswaADO
 
                 SqlCommand cmd = new SqlCommand(query, conn);
 
-                cmd.Parameters.AddWithValue("@NIM", txtNIM.Text);
+                cmd.Parameters.AddWithValue("@NIM", txtNIM1.Text);
                 cmd.Parameters.AddWithValue("@Nama", txtNama.Text);
                 cmd.Parameters.AddWithValue("@JK", cmbJK.Text);
                 cmd.Parameters.AddWithValue("@TanggalLahir", dtpTanggalLahir.Value.Date);
@@ -236,9 +237,9 @@ namespace CRUDMahasiswaADO
                     string query = "DELETE FROM Mahasiswa WHERE NIM =  @NIM";
 
                     SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@NIM", txtNIM.Text);
+                    cmd.Parameters.AddWithValue("@NIM", txtNIM1.Text);
 
-                    int result = cmd.EndExecuteNonQuery();
+                    int result = cmd.ExecuteNonQuery();
 
                     if (result > 0)
                     {
@@ -263,13 +264,13 @@ namespace CRUDMahasiswaADO
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
 
-                txtNIM.Text = row.Cells["NIM"].Value.ToString();
+                txtNIM1.Text = row.Cells["NIM"].Value.ToString();
                 txtNama.Text = row.Cells["Nama"].Value.ToString();
                 cmbJK.Text = row.Cells["JenisKelamin"].Value.ToString();
                 dtpTanggalLahir.Value = Convert.ToDateTime(row.Cells["TanggalLahir"].Value);
@@ -277,16 +278,37 @@ namespace CRUDMahasiswaADO
                 txtKodeProdi.Text = row.Cells["KodeProdi"].Value.ToString();
             }
         }
-
+         
         private void ClearForm()
         {
-            txtNIM.Clear();
+            txtNIM1.Clear();
             txtNama.Clear();
             cmbJK.SelectedIndex = -1;
             txtAlamat.Clear();
             txtKodeProdi.Clear();
             dtpTanggalLahir.Value = DateTime.Now;
-            txtNIM.Focus();
+            txtNIM1.Focus();
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            cmbJK.Items.Clear();
+            cmbJK.Items.Add("L");
+            cmbJK.Items.Add("P");
+
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.MultiSelect = false;
+            dataGridView1.ReadOnly = true;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dataGridView1.CellClick += dataGridView1_CellClick;
+
+        }
+
+        private void txtNIM(object sender, EventArgs e)
+        {
 
         }
     }
