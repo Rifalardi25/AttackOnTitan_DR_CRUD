@@ -39,7 +39,7 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.btn_koneksi = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_tampil = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -143,14 +143,15 @@
             this.btn_koneksi.UseVisualStyleBackColor = true;
             this.btn_koneksi.Click += new System.EventHandler(this.btnConnect_Click);
             // 
-            // button2
+            // btn_tampil
             // 
-            this.button2.Location = new System.Drawing.Point(550, 70);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 30);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Menampilkan Data";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_tampil.Location = new System.Drawing.Point(550, 70);
+            this.btn_tampil.Name = "btn_tampil";
+            this.btn_tampil.Size = new System.Drawing.Size(150, 30);
+            this.btn_tampil.TabIndex = 11;
+            this.btn_tampil.Text = "Menampilkan Data";
+            this.btn_tampil.UseVisualStyleBackColor = true;
+            this.btn_tampil.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // button3
             // 
@@ -215,7 +216,7 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_tampil);
             this.Controls.Add(this.btn_koneksi);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
@@ -248,7 +249,7 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button btn_koneksi;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_tampil;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
