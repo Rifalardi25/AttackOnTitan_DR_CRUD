@@ -141,7 +141,7 @@
             this.btn_koneksi.TabIndex = 10;
             this.btn_koneksi.Text = "Membuka Koneksi";
             this.btn_koneksi.UseVisualStyleBackColor = true;
-            this.btn_koneksi.Click += new System.EventHandler(this.btn_koneksi);
+            this.btn_koneksi.Click += new System.EventHandler(this.btnConnect_Click);
             // 
             // button2
             // 
