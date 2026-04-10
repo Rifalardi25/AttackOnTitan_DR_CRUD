@@ -38,11 +38,11 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.btn_koneksi = new System.Windows.Forms.Button();
-            this.btn_tampil = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnConnect = new System.Windows.Forms.Button();
+            this.btnLoad = new System.Windows.Forms.Button();
+            this.btnInsert = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -133,53 +133,55 @@
             this.textBox4.Size = new System.Drawing.Size(250, 50);
             this.textBox4.TabIndex = 9;
             // 
-            // btn_koneksi
+            // btnConnect
             // 
-            this.btn_koneksi.Location = new System.Drawing.Point(550, 30);
-            this.btn_koneksi.Name = "btn_koneksi";
-            this.btn_koneksi.Size = new System.Drawing.Size(150, 30);
-            this.btn_koneksi.TabIndex = 10;
-            this.btn_koneksi.Text = "Membuka Koneksi";
-            this.btn_koneksi.UseVisualStyleBackColor = true;
-            this.btn_koneksi.Click += new System.EventHandler(this.btnConnect_Click);
+            this.btnConnect.Location = new System.Drawing.Point(550, 30);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(150, 30);
+            this.btnConnect.TabIndex = 10;
+            this.btnConnect.Text = "Membuka Koneksi";
+            this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
-            // btn_tampil
+            // btnLoad
             // 
-            this.btn_tampil.Location = new System.Drawing.Point(550, 70);
-            this.btn_tampil.Name = "btn_tampil";
-            this.btn_tampil.Size = new System.Drawing.Size(150, 30);
-            this.btn_tampil.TabIndex = 11;
-            this.btn_tampil.Text = "Menampilkan Data";
-            this.btn_tampil.UseVisualStyleBackColor = true;
-            this.btn_tampil.Click += new System.EventHandler(this.btnLoad_Click);
+            this.btnLoad.Location = new System.Drawing.Point(550, 70);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(150, 30);
+            this.btnLoad.TabIndex = 11;
+            this.btnLoad.Text = "Menampilkan Data";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
-            // button3
+            // btnInsert
             // 
-            this.button3.Location = new System.Drawing.Point(550, 110);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 30);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Menambah Data";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.btnInsert_Click);
+            this.btnInsert.Location = new System.Drawing.Point(550, 110);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(150, 30);
+            this.btnInsert.TabIndex = 12;
+            this.btnInsert.Text = "Menambah Data";
+            this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
-            // button4
+            // btnUpdate
             // 
-            this.button4.Location = new System.Drawing.Point(550, 150);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(150, 30);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "Mengubah Data";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnUpdate.Location = new System.Drawing.Point(550, 150);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(150, 30);
+            this.btnUpdate.TabIndex = 13;
+            this.btnUpdate.Text = "Mengubah Data";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // button5
+            // btnDelete
             // 
-            this.button5.Location = new System.Drawing.Point(550, 190);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(150, 30);
-            this.button5.TabIndex = 14;
-            this.button5.Text = "Menghapus Data";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(550, 190);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(150, 30);
+            this.btnDelete.TabIndex = 14;
+            this.btnDelete.Text = "Menghapus Data";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // dateTimePicker1
             // 
@@ -214,11 +216,11 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.btn_tampil);
-            this.Controls.Add(this.btn_koneksi);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnInsert);
+            this.Controls.Add(this.btnLoad);
+            this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
@@ -249,11 +251,11 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button btn_koneksi;
-        private System.Windows.Forms.Button btn_tampil;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnConnect;
+        private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.Button btnInsert;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
