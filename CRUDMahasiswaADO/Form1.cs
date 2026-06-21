@@ -131,7 +131,7 @@ namespace CRUDMahasiswaADO
                     }
                 }
                 byte[] imgBytes = ConvertImageToByte(fotoMhs);
-                dbLogic.InsertMhs(txtNIM1.Text, txtNama.Text, txtAlamat.Text, cmbJK.Text, dtpTanggalLahir.Value.Date, txtKodeProdi.Text, imgBytes);
+                dbLogic.UpdateMhs(txtNIM1.Text, txtNama.Text, txtAlamat.Text, cmbJK.Text, dtpTanggalLahir.Value.Date, txtKodeProdi.Text, imgBytes);
                 MessageBox.Show("Data mahasiswa berhasil diubah");
                 ClearForm();
                 LoadData();
@@ -182,16 +182,18 @@ namespace CRUDMahasiswaADO
             if (e.RowIndex >= 0)
             {
                 DataRow row = ((DataRowView)bindingSource[e.RowIndex]).Row;
-                txtNIM1.Text = row[0].ToString();
-                txtNama.Text = row[1].ToString();
-                cmbJK.Text = row[2].ToString();
-                dtpTanggalLahir.Value = Convert.ToDateTime(row[3]);
-                txtAlamat.Text = row[4].ToString();
-                txtKodeProdi.Text = row[5].ToString();
 
-                if (row[5] != DBNull.Value)
+                txtNIM1.Text = row["NIM"].ToString();
+                txtNama.Text = row["Nama"].ToString();
+                cmbJK.Text = row["JenisKelamin"].ToString();
+                dtpTanggalLahir.Value = Convert.ToDateTime(row["TanggalLahir"]);
+                txtAlamat.Text = row["Alamat"].ToString();
+
+                txtKodeProdi.Text = row["KodeProdi"].ToString();
+
+                if (row["Foto"] != DBNull.Value)
                 {
-                    byte[] imgBytes = (byte[])row[5];
+                    byte[] imgBytes = (byte[])row["Foto"];
                     using (MemoryStream ms = new MemoryStream(imgBytes))
                     {
                         fotoMhs.Image = Image.FromStream(ms);
@@ -470,7 +472,7 @@ namespace CRUDMahasiswaADO
                     string nama = row["Nama"].ToString().Trim();
                     string jk = row["JenisKelamin"].ToString().Trim();
                     string alamat = row["Alamat"].ToString().Trim();
-                    string kodeProdi = row["NamaProdi"].ToString().Trim();
+                    string kodeProdi = row["KodeProdi"].ToString().Trim();
                     string fotoPath = row.Table.Columns.Contains("FotoPath")
                                         ? row["FotoPath"].ToString().Trim()
                                         : string.Empty;

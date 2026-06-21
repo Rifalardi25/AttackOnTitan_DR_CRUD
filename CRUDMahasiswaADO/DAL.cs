@@ -86,7 +86,7 @@ namespace CRUDMahasiswaADO
                 command.Parameters.AddWithValue("pTanggalLahir", tanggalLahir);
                 command.Parameters.AddWithValue("pJeniskelamin", jenisKelamin);
                 command.Parameters.AddWithValue("pKodeProdi", kodeProdi);
-                command.Parameters.AddWithValue("pFoto", foto);
+                command.Parameters.Add("@pFoto", SqlDbType.VarBinary, -1).Value = (object)foto ?? DBNull.Value;
 
                 command.ExecuteNonQuery();
                 trans.Commit();
@@ -117,7 +117,7 @@ namespace CRUDMahasiswaADO
             command.Parameters.AddWithValue("pJeniskelamin", jenisKelamin);
             command.Parameters.AddWithValue("pTanggalLahir", tanggalLahir);
             command.Parameters.AddWithValue("pKodeProdi", kodeProdi);
-            command.Parameters.AddWithValue("pFoto", foto);
+            command.Parameters.Add("@pFoto", SqlDbType.VarBinary, -1).Value = (object)foto ?? DBNull.Value;
 
             command.CommandType = CommandType.StoredProcedure;
 
