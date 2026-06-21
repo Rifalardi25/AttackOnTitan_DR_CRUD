@@ -1,0 +1,159 @@
+﻿namespace CRUDMahasiswaADO
+{
+    partial class Dashboard
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtpTanggalMasuk = new System.Windows.Forms.DateTimePicker();
+            this.cmbTipe = new System.Windows.Forms.ComboBox();
+            this.btn_Load = new System.Windows.Forms.Button();
+            this.btn_Reset = new System.Windows.Forms.Button();
+            this.btn_DataMahasiswa = new System.Windows.Forms.Button();
+            this.chartProdi = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ((System.ComponentModel.ISupportInitialize)(this.chartProdi)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tahun Masuk";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(300, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(214, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "REKAP DATA MAHASISWA";
+            // 
+            // dtpTanggalMasuk
+            // 
+            this.dtpTanggalMasuk.Location = new System.Drawing.Point(119, 46);
+            this.dtpTanggalMasuk.Name = "dtpTanggalMasuk";
+            this.dtpTanggalMasuk.Size = new System.Drawing.Size(200, 26);
+            this.dtpTanggalMasuk.TabIndex = 2;
+            // 
+            // cmbTipe
+            // 
+            this.cmbTipe.FormattingEnabled = true;
+            this.cmbTipe.Location = new System.Drawing.Point(638, 44);
+            this.cmbTipe.Name = "cmbTipe";
+            this.cmbTipe.Size = new System.Drawing.Size(121, 28);
+            this.cmbTipe.TabIndex = 3;
+            this.cmbTipe.SelectedIndexChanged += new System.EventHandler(this.cmbTipe_SelectedIndexChanged);
+            // 
+            // btn_Load
+            // 
+            this.btn_Load.Location = new System.Drawing.Point(216, 460);
+            this.btn_Load.Name = "btn_Load";
+            this.btn_Load.Size = new System.Drawing.Size(64, 40);
+            this.btn_Load.TabIndex = 4;
+            this.btn_Load.Text = "Load";
+            this.btn_Load.UseVisualStyleBackColor = true;
+            this.btn_Load.Click += new System.EventHandler(this.btn_Load_Click);
+            // 
+            // btn_Reset
+            // 
+            this.btn_Reset.Location = new System.Drawing.Point(396, 462);
+            this.btn_Reset.Name = "btn_Reset";
+            this.btn_Reset.Size = new System.Drawing.Size(75, 38);
+            this.btn_Reset.TabIndex = 5;
+            this.btn_Reset.Text = "Reset";
+            this.btn_Reset.UseVisualStyleBackColor = true;
+            this.btn_Reset.Click += new System.EventHandler(this.btn_Reset_Click);
+            // 
+            // btn_DataMahasiswa
+            // 
+            this.btn_DataMahasiswa.Location = new System.Drawing.Point(638, 453);
+            this.btn_DataMahasiswa.Name = "btn_DataMahasiswa";
+            this.btn_DataMahasiswa.Size = new System.Drawing.Size(150, 47);
+            this.btn_DataMahasiswa.TabIndex = 6;
+            this.btn_DataMahasiswa.Text = "Data Mahasiswa";
+            this.btn_DataMahasiswa.UseVisualStyleBackColor = true;
+            this.btn_DataMahasiswa.Click += new System.EventHandler(this.btn_DataMahasiswa_Click);
+            // 
+            // chartProdi
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartProdi.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartProdi.Legends.Add(legend1);
+            this.chartProdi.Location = new System.Drawing.Point(12, 92);
+            this.chartProdi.Name = "chartProdi";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartProdi.Series.Add(series1);
+            this.chartProdi.Size = new System.Drawing.Size(776, 355);
+            this.chartProdi.TabIndex = 7;
+            this.chartProdi.Text = "chart1";
+            // 
+            // Dashboard
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 512);
+            this.Controls.Add(this.chartProdi);
+            this.Controls.Add(this.btn_DataMahasiswa);
+            this.Controls.Add(this.btn_Reset);
+            this.Controls.Add(this.btn_Load);
+            this.Controls.Add(this.cmbTipe);
+            this.Controls.Add(this.dtpTanggalMasuk);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Name = "Dashboard";
+            this.Text = "Dashboard";
+            this.Load += new System.EventHandler(this.Dashboard_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.chartProdi)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dtpTanggalMasuk;
+        private System.Windows.Forms.ComboBox cmbTipe;
+        private System.Windows.Forms.Button btn_Load;
+        private System.Windows.Forms.Button btn_Reset;
+        private System.Windows.Forms.Button btn_DataMahasiswa;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartProdi;
+    }
+}
